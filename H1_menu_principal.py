@@ -1,3 +1,5 @@
+
+
 def bienvenida():
  print()
  print()
@@ -19,9 +21,17 @@ def menu():
     print("                                              2-Puntuaciones")
     print("                                              3-Salir")
     print("                                       *********MENÚ************")
+    opcion= int(input("Elija una opción:  "))
+    if opcion==1:
+       print("no puedo importar monigote")
+    elif opcion==2:
+        print("alan 30000 puntos")
+    if opcion==3:
+        print("Saliste del juego")
+        return False
 
-def main():
-    bienvenida()
-    menu()
 
-main()
+    
+bienvenida()
+
+menu()
