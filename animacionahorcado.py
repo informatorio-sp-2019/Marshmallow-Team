@@ -49,3 +49,7 @@ AHORCADO = ['''
           |
     =========''']
 
+def recorrer():
+      for i in AHORCADO:
+            print (i)
+recorrer()
