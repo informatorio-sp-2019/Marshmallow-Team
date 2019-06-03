@@ -49,7 +49,5 @@ AHORCADO = ['''
           |
     =========''']
 
-def recorrer():
-      for i in AHORCADO:
-            print (i)
-recorrer()
+def recorrer(posicion):
+    print(AHORCADO[posicion]+"\n")

@@ -1,9 +1,10 @@
 #importamos la libreria random para poder elegir utilizar una funcion que eliga una palabra aleatoriamente
 import random
+lista = []
 #funcion incognita
-def incognita():
+def incognita1():
 	#lista de palabras
-	lista_de_palabras=['Alberto','Albina','Alejandro','Alejo','Alfonso','Alfredo','Alicia','Alipio','Almudena','Alonso']
+	lista_de_palabras=['alberto','albina','alejandro','alejo','alfonso','alfredo','alicia','alipio','almudena','alonso']
 	#funcion que elige una palabra de la lista aleatoriamente
 	palabra = random.choice(lista_de_palabras)
 	#se calcula la longitud de la palabra
@@ -33,3 +34,7 @@ def buscar_y_Remplazar(letra,palabra):
 			lista[posicion]=letra
 		#incrementamos el contador
 		posicion+=1
+
+lista = []
+
+	
