@@ -50,4 +50,8 @@ AHORCADO = ['''
     =========''']
 
 def recorrer(posicion):
-    print(AHORCADO[posicion]+"\n")
+  if posicion<=6:
+    print((" ")*20+AHORCADO[posicion]+"\n")
+
+  else:
+    print((" ")*20+AHORCADO[6],end="\r")
