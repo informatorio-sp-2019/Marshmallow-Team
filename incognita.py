@@ -21,7 +21,8 @@ def mostrar_Lista():
 def ingresa_Letra():
 	letra = input("\n\nIngresar una letra: ")
 	#devolvemosla letra que ingreso el usuario
-	return letra 
+	return letra
+	
 #busca y reemplaza los giones bajos por la letra en el lugar que corresponde
 def buscar_y_Remplazar(letra,palabra):
 	#contador para guardar la posicion
