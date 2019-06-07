@@ -14,7 +14,7 @@ def gana(a):
 
 def tabla():
 	tt="Letras usadas"
-	print("\n\n" + tt.center(60,"▄")+"\n")
+	print(  tt.center(60,"▄")+"\n")
 	if tabla_de_letras_utilizadas.mostar_Letras_Usadas() == None:
 		pass
 	else:
@@ -41,9 +41,10 @@ def pantalla(a):
 	palabra,ls = incognita.incognita1()
 	print(palabra)
 	print(vidas(a))
-
 	animacionahorcado.recorrer(posicion)
 	incognita.mostrar_Lista()
+	print("\n"+"	"*21+"Puntos:	")
+	print("	"*21+"Tiempo:	")
 	tabla()
 
 	while True:
