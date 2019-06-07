@@ -67,7 +67,13 @@ def pantalla(a):
 			tabla_de_letras_utilizadas.letras_utilizadas(Fore.GREEN + letra)
 			animacionahorcado.recorrer(posicion)
 			if palabra == gana(ls):
-				print("ganaste")
+				print("""   _______      ___      .__   __.      ___           _______..___________. _______ 
+ /  _____|    /   \     |  \ |  |     /   \         /       ||           ||   ____|
+|  |  __     /  ^  \    |   \|  |    /  ^  \       |   (----``---|  |----`|  |__   
+|  | |_ |   /  /_\  \   |  . `  |   /  /_\  \       \   \        |  |     |   __|  
+|  |__| |  /  _____  \  |  |\   |  /  _____  \  .----)   |       |  |     |  |____ 
+ \______| /__/     \__\ |__| \__| /__/     \__\ |_______/        |__|     |_______|
+                                                                                   """)
 		else:
 			posicion+=1
 			tabla_de_letras_utilizadas.letras_utilizadas(Fore.RED + letra)
