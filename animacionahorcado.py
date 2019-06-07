@@ -50,4 +50,4 @@ AHORCADO = ['''
     =========''']
 
 def recorrer(posicion):
-    print(AHORCADO[posicion]+"\n")
+  print((" ")*20+AHORCADO[posicion]+"\n")
