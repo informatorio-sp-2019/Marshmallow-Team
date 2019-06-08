@@ -32,7 +32,7 @@ def menu():
     if opcion=="1":
        pantalla_del_juego.pantalla(3)
     elif opcion=="2":
-        print("alan 30000 puntos")
+        import pantalla_puntuacion
     elif opcion=="3":
         print("\n Saliste del juego")
         return False
