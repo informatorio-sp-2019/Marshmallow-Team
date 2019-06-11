@@ -12,7 +12,9 @@ def gana(a):
 	return r
 
 
+
 def tabla():
+	
 	tt="Letras usadas"
 	print(  tt.center(60,"▄")+"\n")
 	if tabla_de_letras_utilizadas.mostar_Letras_Usadas() == None:
@@ -35,7 +37,7 @@ def temporizador(t):
 		t -= 1
 	print('Goodbye!\n\n\n\n\n')
 
-def pantalla(a):
+def pantalla(a,puntos):
 	posicion = 0
 	system("cls")
 	palabra,ls = incognita.incognita1()
@@ -43,10 +45,9 @@ def pantalla(a):
 	print(vidas(a))
 	animacionahorcado.recorrer(posicion)
 	incognita.mostrar_Lista()
-	print("\n"+"	"*21+"Puntos:	")
+	print("\n"+("Puntos:	").rjust(14,"	"),puntos)
 	print("	"*21+"Tiempo:	")
 	tabla()
-
 	while True:
 
 		letra = incognita.ingresa_Letra()
@@ -60,27 +61,29 @@ def pantalla(a):
 
 			continue
 
-		incognita.buscar_y_Remplazar(letra,palabra)
+		lista2=incognita.buscar_y_Remplazar(letra,palabra) 
 		print(vidas(a))
 	
 		if letra in palabra:
 
-			tabla_de_letras_utilizadas.letras_utilizadas(Fore.GREEN + letra)
+			lista_de_tablas =tabla_de_letras_utilizadas.letras_utilizadas(Fore.GREEN + letra)
 			animacionahorcado.recorrer(posicion)
 			if palabra == gana(ls):
-				print("""   _______      ___      .__   __.      ___           _______..___________. _______ 
- /  _____|    /   \     |  \ |  |     /   \         /       ||           ||   ____|
-|  |  __     /  ^  \    |   \|  |    /  ^  \       |   (----``---|  |----`|  |__   
-|  | |_ |   /  /_\  \   |  . `  |   /  /_\  \       \   \        |  |     |   __|  
-|  |__| |  /  _____  \  |  |\   |  /  _____  \  .----)   |       |  |     |  |____ 
- \______| /__/     \__\ |__| \__| /__/     \__\ |_______/        |__|     |_______|
-                                                                                   """)
+				puntos = puntos + 5
+				lista_de_tablas = lista_de_tablas.clear()
+				lista2 = lista2.clear()
+				pantalla(a,puntos)
+
+
+					
 		else:
 			posicion+=1
-			tabla_de_letras_utilizadas.letras_utilizadas(Fore.RED + letra)
+			lista_de_tablas =tabla_de_letras_utilizadas.letras_utilizadas(Fore.RED + letra)
 			animacionahorcado.recorrer(posicion)
 
 		incognita.mostrar_Lista()
+		print("\n"+("Puntos:	").rjust(14,"	"),puntos)
+		print("	"*21+"Tiempo:	")
 		tabla()
 
 		if posicion == 5:
@@ -89,8 +92,22 @@ def pantalla(a):
 			continue
 
 		if a == 0:
-			print("\n\n\n\n\n			perdiste")
-			input()
-			break
+			system("cls")
+
+			print(""".______    _______ .______       _______   __       _______..___________. _______ 
+|   _  \  |   ____||   _  \     |       \ |  |     /       ||           ||   ____|
+|  |_)  | |  |__   |  |_)  |    |  .--.  ||  |    |   (----``---|  |----`|  |__   
+|   ___/  |   __|  |      /     |  |  |  ||  |     \   \        |  |     |   __|  
+|  |      |  |____ |  |\  \----.|  '--'  ||  | .----)   |       |  |     |  |____ 
+| _|      |_______|| _| `._____||_______/ |__| |_______/        |__|     |_______|""")
+			lista_de_tablas = lista_de_tablas.clear()
+			lista2 = lista2.clear()
+			while True:
+				salir=input("\n	1-salir:  \n	2- Reiniciar: ")
+				if salir =="1":
+					break
+				elif salir =="2":
+					pantalla(3,0)
+			break		
 	import H1_menu_principal
 	H1_menu_principal.iniciar()

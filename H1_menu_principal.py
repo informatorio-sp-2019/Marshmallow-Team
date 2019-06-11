@@ -30,7 +30,7 @@ def menu():
     print(" "*20+tt.center(60,"*"))
     opcion= input("Elija una opción:  ")
     if opcion=="1":
-       pantalla_del_juego.pantalla(3)
+       pantalla_del_juego.pantalla(3,0)
     elif opcion=="2":
         import pantalla_puntuacion
     elif opcion=="3":

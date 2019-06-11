@@ -12,11 +12,13 @@ def incognita1():
 	#agregamos guiones bajos a una lista vacia(la cantidad de guiones que se agregan corresponde a la longitud de la palabra)
 	for x in palabra:
 		lista.append("_")
+	
 	return palabra,lista
 #muestra la lista que generamos con la cantidad de guiones que corresponde a la longitud de la palabra 
 def mostrar_Lista():
 	for i in lista:
 		print(i,end=' ')
+	
 #pide al usuario ingresar una letra
 def ingresa_Letra():
 	letra = input("\n\nIngresar una letra: ")
@@ -35,7 +37,7 @@ def buscar_y_Remplazar(letra,palabra):
 			lista[posicion]=letra
 		#incrementamos el contador
 		posicion+=1
-
+	return lista
 lista = []
 
 	
