@@ -3,6 +3,7 @@ import animacionahorcado
 import tabla_de_letras_utilizadas
 from colorama import Fore, init
 from os import system
+from winsound import *
 init(autoreset=True)
 
 def gana(a):
@@ -72,10 +73,8 @@ def pantalla(a,puntos):
 				puntos = puntos + 5
 				lista_de_tablas = lista_de_tablas.clear()
 				lista2 = lista2.clear()
+				PlaySound("ganaste.wav",SND_ASYNC)
 				pantalla(a,puntos)
-
-
-					
 		else:
 			posicion+=1
 			lista_de_tablas =tabla_de_letras_utilizadas.letras_utilizadas(Fore.RED + letra)
@@ -100,10 +99,11 @@ def pantalla(a,puntos):
 |   ___/  |   __|  |      /     |  |  |  ||  |     \   \        |  |     |   __|  
 |  |      |  |____ |  |\  \----.|  '--'  ||  | .----)   |       |  |     |  |____ 
 | _|      |_______|| _| `._____||_______/ |__| |_______/        |__|     |_______|""")
+			PlaySound("perdiste.wav",SND_ASYNC)
 			lista_de_tablas = lista_de_tablas.clear()
 			lista2 = lista2.clear()
 			while True:
-				salir=input("\n	1-salir:  \n	2- Reiniciar: ")
+				salir=input("\n	1-Salir:  \n	2- Reiniciar: ")
 				if salir =="1":
 					break
 				elif salir =="2":

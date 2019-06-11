@@ -4,7 +4,7 @@ lista = []
 #funcion incognita
 def incognita1():
 	#lista de palabras
-	lista_de_palabras=['alberto','albina','alejandro','alejo','alfonso','alfredo','alicia','alipio','almudena','alonso']
+	lista_de_palabras=['alberto','albina','alejandro','alejo','alfonso','alfredo','alicia','alipio','almudena','alonso','elian','edgardo','alexis','alex','hector','stefany','aerosmith','desoxirribonucleico','argentina','barcelona','mexico','nirvana','chespirito']
 	#funcion que elige una palabra de la lista aleatoriamente
 	palabra = random.choice(lista_de_palabras)
 	#se calcula la longitud de la palabra
