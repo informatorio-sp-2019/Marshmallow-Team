@@ -21,7 +21,9 @@ def mostrar_Lista():
 	
 #pide al usuario ingresar una letra
 def ingresa_Letra():
+	print("Ingresar ? para la pista")
 	letra = input("\n\nIngresar una letra: ")
+
 	#devolvemosla letra que ingreso el usuario
 	return letra
 	

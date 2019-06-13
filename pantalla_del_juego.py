@@ -4,6 +4,7 @@ import tabla_de_letras_utilizadas
 from colorama import Fore, init
 from os import system
 from winsound import *
+import random
 init(autoreset=True)
 
 def gana(a):
@@ -53,11 +54,19 @@ def pantalla(a,puntos):
 
 		letra = incognita.ingresa_Letra()
 		# countdown(20)
+		
+
+
 		if len(letra) == 1 and letra.isalpha() == True:
 
 			letra=letra.lower()
 			system("cls")
 			pass
+		#Pista
+		elif letra=="?":
+			pista = random.choice(palabra)
+			letra=pista
+			puntos -= 2
 		else:
 
 			continue
@@ -77,7 +86,7 @@ def pantalla(a,puntos):
 				pantalla(a,puntos)
 		else:
 			posicion+=1
-			lista_de_tablas =tabla_de_letras_utilizadas.letras_utilizadas(Fore.RED + letra)
+			lista_de_tablas = tabla_de_letras_utilizadas.letras_utilizadas(Fore.RED + letra)
 			animacionahorcado.recorrer(posicion)
 
 		incognita.mostrar_Lista()
