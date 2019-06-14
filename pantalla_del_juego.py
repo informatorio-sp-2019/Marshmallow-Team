@@ -5,8 +5,10 @@ from colorama import Fore, init
 from os import system
 from winsound import *
 import random
+import time
+import threading
 init(autoreset=True)
-
+posicion=0
 def gana(a):
 	r=""
 	for i in a:
@@ -26,20 +28,23 @@ def tabla():
 	print("\n\n▄" + "▄"*59)
 
 def vidas(a):
-	return "	"*20+"vidas:	"+Fore.RED+"♥ "*a
+	return ("\n"+("Vidas:	").rjust(13,"	")+Fore.RED+"♥ "*a)
 
 
-def temporizador(t):
-	import time
+def temporizador():
+	global posicion
+	t=15
 	while t:
-		mins, secs = divmod(t,60)
-		timeformat = '{:02d}:{:02d}'.format(mins, secs)
-		print(timeformat, end='\r')
 		time.sleep(1)
 		t -= 1
-	print('Goodbye!\n\n\n\n\n')
+		if t == 0:
+			posicion+=1
+		elif t <= 5:
+			Beep(1500,200)
+			Beep(1500,200)
 
-def pantalla(a,puntos):
+def pantalla(a,puntos,musica):
+	global posicion
 	posicion = 0
 	system("cls")
 	palabra,ls = incognita.incognita1()
@@ -48,15 +53,16 @@ def pantalla(a,puntos):
 	animacionahorcado.recorrer(posicion)
 	incognita.mostrar_Lista()
 	print("\n"+("Puntos:	").rjust(14,"	"),puntos)
-	print("	"*21+"Tiempo:	")
+	print("\n"+("Tiempo:	").rjust(14,"	"))
 	tabla()
+	if musica=="on":
+		PlaySound('prueba.wav',SND_LOOP | SND_ASYNC)
+		pass
 	while True:
 
+		threading.Thread(target=temporizador).start()
 		letra = incognita.ingresa_Letra()
-		# countdown(20)
 		
-
-
 		if len(letra) == 1 and letra.isalpha() == True:
 
 			letra=letra.lower()
@@ -67,6 +73,18 @@ def pantalla(a,puntos):
 			pista = random.choice(palabra)
 			letra=pista
 			puntos -= 2
+		
+		elif letra == "on":
+			musica = "on"
+			PlaySound('prueba.wav',SND_LOOP | SND_ASYNC)
+			system("cls")
+			pass
+		
+		elif letra == "off":
+			musica="off"
+			PlaySound('*',SND_ALIAS | SND_ASYNC)
+			system("cls")
+			pass
 		else:
 
 			continue
