@@ -34,8 +34,12 @@ def menu():
     elif opcion=="2":
         import pantalla_puntuacion
     elif opcion=="3":
-        print("\n Saliste del juego")
-        return False
+        salir = int(input("\n ¿Desea salir del Juego?\n\n1-Si\n2-No\n\nIngresar: "))
+        if(salir==1):
+            return False
+        else:
+            os.system("cls")
+            iniciar()
     else:
         print("\n   Opcion incorrecta")
         input()
